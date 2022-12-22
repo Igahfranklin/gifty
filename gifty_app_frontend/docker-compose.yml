@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+ 
+  gifty:
+    build: .
+    command: npm run start
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/gifty
+      - build:/home/gifty/build
+  
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - build:/var/www/gifty
+    depends_on:
+      - gifty
+
+volumes:
+  build:
