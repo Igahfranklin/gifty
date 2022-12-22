@@ -15,20 +15,22 @@ import { GiftSentSuccessIconWhite } from "../../assets/svg-components";
 import { calculateFee } from "../../utils/calc";
 import { paymentTypes } from "../../utils/paymentTypes";
 
-const countryExts = [
-  {
-    ext: 234,
-    title: "234 - NG",
-  },
-  {
-    ext: 1,
-    title: "1 - USA",
-  },
-  {
-    ext: 44,
-    title: "44 - UK",
-  },
-];
+import { countryExts } from "../../utils/phoneExt";
+
+// const countryExts = [
+//   {
+//     ext: 234,
+//     title: "234 - NG",
+//   },
+//   {
+//     ext: 1,
+//     title: "1 - USA",
+//   },
+//   {
+//     ext: 44,
+//     title: "44 - UK",
+//   },
+// ];
 
 // TODO: validate phone number on Twilio
 export default function SendForm() {
@@ -150,8 +152,8 @@ export default function SendForm() {
                 <div className="grid grid-cols-4 gap-x-1">
                   <SelectInput label="Ext." name="phone_ext">
                     {countryExts.map((ext, i) => (
-                      <option key={i} value={ext.ext}>
-                        {ext.title}
+                      <option key={i} value={ext.phone_code}>
+                        {ext.country_name} - {ext.phone_code}
                       </option>
                     ))}
                   </SelectInput>

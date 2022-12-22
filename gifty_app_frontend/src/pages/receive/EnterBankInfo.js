@@ -17,11 +17,8 @@ import ErrorPage from "../../components/ErrorPage";
 
 function DisplayAccountName() {
   const {
-<<<<<<< HEAD
-    values: { bank, account_number,account_name_resolved }, 
-=======
     values: { bank, account_number }, //account_name_resolved
->>>>>>> e0e527175108de9f573708e2a289a1775d6262f2
+
     setFieldValue,
   } = useFormikContext();
 
