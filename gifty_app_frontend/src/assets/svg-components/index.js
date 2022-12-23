@@ -40,3 +40,4 @@ export { default as AddIcon } from "./AddIcon";
 export { default as MoneySent } from "./MoneySent";
 export { default as MessageText } from "./MessageText";
 export { default as GiftSentSuccessIconWhite } from "./GiftSentSuccessIconWhite";
+export { default as ProcessConnector } from "./ProcessConnector";
